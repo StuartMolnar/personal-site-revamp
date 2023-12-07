@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 768px) {
+  .my-slick-dots {
+    display: none !important;
+  }
+}
+
+.slick-next {
+  right: auto !important;
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display:none;
+}
+
+
+/* targets the services carousel and horizontally aligns the cards within their slider component */
+.service-carousel > .slick-list > .slick-track > .slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.triangle-down {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid currentColor;
+}
+
+.triangle-up {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid currentColor;
+}
