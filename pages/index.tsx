@@ -1,5 +1,4 @@
 // Import the Link component from Next.js
-import Link from 'next/link';
 
 export default function Home() {
   return (
