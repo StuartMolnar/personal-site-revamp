@@ -1,0 +1,9 @@
+const Footer = () => {  
+    return (
+        <footer className="flex justify-center py-8 text-body">
+            <p className="">Message me at <a href="mailto:stuartmolnar@hotmail.com" className="font-semibold">stuartmolnar@hotmail.com</a></p>
+        </footer>
+    );
+}
+  
+export default Footer;
