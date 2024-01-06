@@ -1,53 +1,57 @@
+/* Container Styles */
 .embla {
-  position: relative;
-  max-width: 100vw; /* Ensure the carousel doesn't exceed the width of the viewport */
-  margin: 0 auto; /* Center the carousel if needed */
+    position: relative;
+    max-width: 100vw;
+    margin: 0 auto;
 }
 
 .embla__viewport {
-  overflow: hidden;
-  background: #CCCCCC;
-  margin-bottom: 30px;
-  border-radius: 1rem;
+    overflow: hidden;
+    background: #CCCCCC;
+    margin-bottom: 30px;
+    border-radius: 1rem;
 }
 
 .embla__container {
-  display: flex;
+    display: flex;
 }
 
+/* Image Styles */
 .embla__slide {
-  position: relative;
-  flex: 0 0 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    flex: 0 0 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .embla__slide__img {
     display: block;
-    max-height: 750px; /* Adjust this value to set the maximum height of your images */
-    width: 100%; /* This will maintain the aspect ratio of the image */
-    max-width: 100%; /* Ensures the image is not wider than its container */
-    object-fit: contain; /* This makes sure that the image is scaled properly within its box */
-    margin-left: auto; /* These two margins center the image horizontally */
+    max-height: 750px; 
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    margin-left: auto;
     margin-right: auto;
-  }
+}
+
+/* Arrow Button Styles */
 
 .embla__buttons {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
 }
 
 .embla__button {
     position: absolute;
-    z-index: 2; /* Ensure arrows are above the images */
-    top: 50%; /* Center vertically */
+    z-index: 2; 
+    top: 50%;
     transform: translateY(-50%);
     background: transparent;
     border: none;
@@ -58,66 +62,68 @@
     cursor: pointer;
     fill: black;
     color: #953A1D;
-  }
-  
-  .embla__button--prev {
-    left: -48px; /* Adjust so the arrow is just outside the image area */
-  }
-  
-  .embla__button--next {
-    right: -48px; /* Adjust so the arrow is just outside the image area */
-  }
-  
-  .embla__button__svg {
+}
+
+.embla__button--prev {
+    left: -48px;
+}
+
+.embla__button--next {
+    right: -48px;
+}
+
+.embla__button__svg {
     width: 100%;
     height: 100%;
-  }
-  
-  /* Hover effect for arrows */
-  .embla__button:hover {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    border-radius: 50%; /* Circular background */
-  }
+}
+
+.embla__button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+/* Selection Dot Styles */
 
 .embla__dots {
-  position: absolute;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .embla__dot {
-  background: #CCCCCC; /* Dot color */
-  border-radius: 50%;
-  width: 10px; /* Dot size */
-  height: 10px; /* Dot size */
-  margin: 0 5px;
+    background: #CCCCCC; 
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
 }
 
 .embla__dot--selected {
-  background: #953A1D; /* Selected dot color */
+    background: #953A1D;
 }
 
-/* Responsive adjustments */
+/* Mobile Styles */
+
 @media (max-width: 768px) {
-  .embla__button {
-    width: 24px; /* Smaller width for mobile */
-    height: 24px; /* Smaller height for mobile */
-  }
+    .embla__button {
+        width: 24px;
+        height: 24px;
+    }
 
-  .embla__button--prev {
-    left: -36px; /* Adjust position for mobile */
-  }
+    .embla__button--prev {
+            left: -36px;
+    }
 
-  .embla__button--next {
-    right: -36px; /* Adjust position for mobile */
-  }
-  .embla__viewport {
-    margin-bottom: 10px;
-  }
-  .embla__dot {
-    width: 8px; /* Smaller dot size for mobile */
-    height: 8px; /* Smaller dot size for mobile */
-  }
+    .embla__button--next {
+        right: -36px;
+    }
+    .embla__viewport {
+        margin-bottom: 10px;
+    }
+    .embla__dot {
+        width: 8px;
+        height: 8px;
+    }
 }
