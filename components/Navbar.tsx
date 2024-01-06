@@ -6,7 +6,7 @@ function Navbar() {
     const router = useRouter();
 
     return (
-        <nav className="flex items-center justify-between px-32 pt-10 font-normal text-black bg-white font-body">
+        <nav className="flex items-center justify-between px-32 pt-10 text-black bg-white text-header font-body">
             <div className="flex items-center">
                 <Link href="/">
                     <Image
