@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/CarouselArrows.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/CarouselArrows.jsx", "carousel/EmblaCarouselDotButton.jsx", "carousel/EmblaCarouselArrowButtons.jsx", "carousel/EmblaCarousel.jsx"],
   "exclude": ["node_modules"]
 }
