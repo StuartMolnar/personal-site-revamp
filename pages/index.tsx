@@ -44,12 +44,12 @@ export default function Home() {
           </p>
         </a>
 
-        {/* adjust grid-cols-# for different screen sizes in future */}
+        {/* adjust grid-cols-# for different screen sizes if necessary */}
         <div id="projects" className="grid grid-cols-2 gap-4 pt-20">
-        <Project bgColor="bg-gray" imgSrc='WSProject.png' title="Western Star Resources" description="Front-End Development" href="western_star"/>
-        <Project bgColor="bg-black" imgSrc='ChatProject.png' title="League of Legends Chat Assistant" description="Back-End Development" href="chat_bot"/>
-        <Project bgColor="bg-black" imgSrc='ConverterProject.png' title="League to Valorant Rank Converter" description="Full-Stack Development" href="ranked_converter"/>
-        <Project bgColor="bg-gray" imgSrc='RioProject.png' title="Rio Minerals Ltd." description="Front-End Development" href="western_star"/>
+          <Project bgColor="bg-gray" imgSrc='WSProject.png' title="Western Star Resources" description="Front-End Development" href="western_star"/>
+          <Project bgColor="bg-black" imgSrc='ChatProject.png' title="League of Legends Chat Assistant" description="Back-End Development" href="chat_bot"/>
+          <Project bgColor="bg-black" imgSrc='ConverterProject.png' title="League to Valorant Rank Converter" description="Full-Stack Development" href="ranked_converter"/>
+          <Project bgColor="bg-gray" imgSrc='RioProject.png' title="Rio Minerals Ltd." description="Front-End Development" href="western_star"/>
         </div>
         
       </main>
