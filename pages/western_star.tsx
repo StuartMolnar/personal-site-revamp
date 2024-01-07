@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import React from "react";
-import EmblaCarousel from '@/carousel/EmblaCarousel'
-import LinkButton from '@/components/LinkButton';
-import TechButton from '@/components/TechButton';
-import '@/css/embla.css'
+import EmblaCarousel from "@/carousel/EmblaCarousel"
+import LinkButton from "@/components/LinkButton";
+import TechButton from "@/components/TechButton";
+import "@/css/embla.css"
 import { isImportDeclaration } from "typescript";
 
 type EmblaOptionsType = {
@@ -13,10 +13,10 @@ type EmblaOptionsType = {
 }
 
 
-const OPTIONS: EmblaOptionsType = { align: 'start', loop: true }
+const OPTIONS: EmblaOptionsType = { align: "start", loop: true }
 const SLIDE_COUNT = 4
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-const IMAGES = ['RioProject.png', 'WSProject.png', 'RioProject.png', 'WSProject.png']
+const IMAGES = ["RioProject.png", "WSProject.png", "RioProject.png", "WSProject.png"]
 
 function WesternStar() {
     return (

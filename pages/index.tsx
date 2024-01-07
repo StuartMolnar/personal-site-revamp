@@ -1,9 +1,9 @@
 // Import the Link component from Next.js
-import Navbar from '@/components/Navbar';
-import LinkButton from '@/components/LinkButton';
-import Project from '@/components/Project';
-import Footer from '@/components/Footer';
-import Image from 'next/image';
+import Navbar from "@/components/Navbar";
+import LinkButton from "@/components/LinkButton";
+import Project from "@/components/Project";
+import Footer from "@/components/Footer";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <main className="min-h-screen px-32 pb-10 font-normal text-black bg-white">
         
         
-        <h1 className="pt-[15%] font-bold text-hero">I'm Stuart, a <span className="text-red">full-stack developer</span> with a focus on creating user-centric digital solutions. Let's work together and make things happen!</h1>
+        <h1 className="pt-[15%] font-bold text-hero">I"m Stuart, a <span className="text-red">full-stack developer</span> with a focus on creating user-centric digital solutions. Let"s work together and make things happen!</h1>
 
         <div className="flex mt-6 space-x-4">
           <LinkButton
@@ -46,10 +46,10 @@ export default function Home() {
 
         {/* adjust grid-cols-# for different screen sizes if necessary */}
         <div id="projects" className="grid grid-cols-2 gap-4 pt-20">
-          <Project bgColor="bg-gray" imgSrc='WSProject.png' title="Western Star Resources" description="Front-End Development" href="western_star"/>
-          <Project bgColor="bg-black" imgSrc='ChatProject.png' title="League of Legends Chat Assistant" description="Back-End Development" href="chat_bot"/>
-          <Project bgColor="bg-black" imgSrc='ConverterProject.png' title="League to Valorant Rank Converter" description="Full-Stack Development" href="ranked_converter"/>
-          <Project bgColor="bg-gray" imgSrc='RioProject.png' title="Rio Minerals Ltd." description="Front-End Development" href="western_star"/>
+          <Project bgColor="bg-gray" imgSrc="WSProject.png" title="Western Star Resources" description="Front-End Development" href="western_star"/>
+          <Project bgColor="bg-black" imgSrc="ChatProject.png" title="League of Legends Chat Assistant" description="Back-End Development" href="chat_bot"/>
+          <Project bgColor="bg-black" imgSrc="ConverterProject.png" title="League to Valorant Rank Converter" description="Full-Stack Development" href="ranked_converter"/>
+          <Project bgColor="bg-gray" imgSrc="RioProject.png" title="Rio Minerals Ltd." description="Front-End Development" href="western_star"/>
         </div>
         
       </main>
