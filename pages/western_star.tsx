@@ -23,30 +23,30 @@ function WesternStar() {
       <div id="screen-top">
         <Navbar />
           
-        <main className="min-h-screen px-10 pt-16 pb-10 font-normal text-black bg-white md:px-32">
-          <div className="flex flex-col justify-between xl:flex-row xl:items-center gap-y-4">
+        <main className="min-h-screen px-10 pt-8 pb-10 font-normal text-black bg-white md:pt-16 md:px-32">
+          <div className="flex flex-col justify-between xl:flex-row xl:items-center gap-y-2">
 
-          <h1 className="font-heavy text-hero">Western Star Resources</h1>
-          <div className="flex gap-x-4">
+            <h1 className="font-heavy text-title md:text-hero">Western Star Resources</h1>
+            <div className="flex -ml-[14px] md:gap-x-4 md:-ml-0">
+              <LinkButton
+                href="https://westernstarresources.com/"
+                imgSrc="Live.svg"
+                buttonText="Live Site"
+              />
             <LinkButton
-              href="https://westernstarresources.com/"
-              imgSrc="Live.svg"
-              buttonText="Live Site"
-            />
-          <LinkButton
-              href="https://github.com/StuartMolnar/western-star"
-              imgSrc="GitHub.svg"
-              buttonText="GitHub"
-            />
-          </div>
+                href="https://github.com/StuartMolnar/western-star"
+                imgSrc="GitHub.svg"
+                buttonText="GitHub"
+              />
+            </div>
 
           </div>
           
-          <div className="pt-10">          
+          <div className="pt-8 md:pt-10">          
             <EmblaCarousel slides={SLIDES} options={OPTIONS} images={IMAGES} />
           </div>
 
-          <div className="flex flex-col-reverse md:flex-row md:gap-x-[10%] gap-y-10 pt-32">
+          <div className="flex flex-col-reverse md:flex-row md:gap-x-[10%] gap-y-10 pt-10 md:pt-32">
             <div className="flex-row md:w-[45%]">
               <h1 className="text-title font-heavy">Title</h1>
               <p className="pt-8 text-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate fringilla lectus, vitae tempus ex porttitor sit amet. Mauris pellentesque ac neque nec lobortis. Aenean dictum justo vel mattis efficitur. Sed quis elit vel lorem pretium vehicula eu eu ligula. Cras consequat rutrum felis eget pellentesque. Vestibulum accumsan fringilla magna, vel pharetra dolor aliquam et. Nulla non sapien vitae massa aliquam viverra sit amet id tellus. Vivamus sed tincidunt tellus. Nullam ac arcu non neque tincidunt imperdiet. Vivamus nec ligula at lorem consequat commodo.

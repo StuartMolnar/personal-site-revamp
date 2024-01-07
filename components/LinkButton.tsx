@@ -9,8 +9,8 @@ interface LinkButtonProps {
 
   const LinkButton: React.FC<LinkButtonProps> = ({ href, imgSrc, buttonText }) => {  
     return (
-        <Link href={href} target="_blank" rel="noopener noreferrer">
-            <div className="flex items-center min-w-[115px] px-4 py-2 space-x-2 cursor-pointer rounded-[99px] bg-red">
+        <Link href={href} target="_blank" rel="noopener noreferrer" className="">
+            <div className="flex md:scale-100 scale-75 items-center justify-start min-w-[115px] max-w-[150px] px-4 py-2 space-x-2 cursor-pointer rounded-[99px] bg-red">
                 <Image
                     src={`/${imgSrc}`}
                     alt={buttonText}
