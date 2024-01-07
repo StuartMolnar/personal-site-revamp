@@ -13,7 +13,7 @@ export default function Home() {
       <main className="min-h-screen px-32 pb-10 font-normal text-black bg-white">
         
         
-        <h1 className="pt-[15%] font-bold text-hero">I"m Stuart, a <span className="text-red">full-stack developer</span> with a focus on creating user-centric digital solutions. Let"s work together and make things happen!</h1>
+        <h1 className="pt-[15%] font-bold text-hero">I&apos;m Stuart, a <span className="text-red">full-stack developer</span> with a focus on creating user-centric digital solutions. Let&apos;s work together and make things happen!</h1>
 
         <div className="flex mt-6 space-x-4">
           <LinkButton
