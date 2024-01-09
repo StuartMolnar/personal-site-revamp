@@ -47,7 +47,7 @@ export default function Home() {
         {/* adjust grid-cols-# for different screen sizes if necessary */}
         <div id="projects" className="grid grid-cols-2 gap-4 pt-20">
           <Project bgColor="bg-gray" imgSrc="western-star-image.png" title="Western Star Resources" description="Front-End Development" href="western-star"/>
-          <Project bgColor="bg-black" imgSrc="league-logo.png" title="League of Legends Chat Assistant" description="Back-End Development" href="chat-bot" width_padding="p-32"/>
+          <Project bgColor="bg-black" imgSrc="league-logo.png" title="League of Legends Chat Assistant" description="Back-End Development" href="chat-bot" width_padding="p-36"/>
           <Project bgColor="bg-black" imgSrc="leaguexvalorant-logo.png" title="League to Valorant Rank Converter" description="Full-Stack Development" href="ranked-converter" width_padding="p-32"/>
           <Project bgColor="bg-gray" imgSrc="rio-image.png" title="Rio Minerals Ltd." description="Front-End Development" href="western-star" width_padding="p-4"/>
         </div>
