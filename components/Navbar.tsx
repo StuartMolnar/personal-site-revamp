@@ -7,50 +7,11 @@ import { useScrollLock } from "@/hooks/useScrollLock";
 
 function Navbar() {
     const router = useRouter();
-
     const [isOpen, setOpen] = useState(false);
-    const [scrollY, setScrollY] = useState(0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrollY(window.scrollY);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    const menuStyle = {
-        top: isOpen ? `${scrollY}px` : '-100%'
-    };
-
-    const closeMenu = () => {
-        setOpen(false);
-    };
 
     useScrollLock(isOpen);
 
-    // update height of menu to account for address bar on mobile devices
-    useEffect(() => {
-        const updateHeight = () => {
-            const menuElement = document.getElementById('menu');
-            if (menuElement) {
-                menuElement.style.height = `${window.innerHeight}px`;
-            }
-        };
-    
-        window.addEventListener('resize', updateHeight);
-    
-        updateHeight();
-    
-        return () => {
-            window.removeEventListener('resize', updateHeight);
-        };
-    }, []);
+
 
     return (
         <>
@@ -92,7 +53,8 @@ function Navbar() {
                 <Hamburger toggled={isOpen} toggle={setOpen} direction="left" distance="sm" />
             </div>
 
-            <div id="menu" className="absolute z-20 flex flex-col items-center justify-center w-full text-white transition-all duration-300 ease-in-out bg-black gap-y-8 text-header" style={menuStyle} onClick={closeMenu}>
+            <div 
+                id="menu" className={`fixed inset-0 z-20 gap-y-8 flex flex-col items-center justify-center w-full text-white bg-black text-header transition-transform duration-300 ease-in-out ${isOpen ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
                 <Link href="/" className={`${router.pathname === "/" ? "font-bold" : ""}`}>Home</Link>
                 <Link href="/#projects" className={`${router.pathname !== "/" ? "font-bold" : ""}`}>Work & Projects</Link>
                 <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="">Résumé</a>
