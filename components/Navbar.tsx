@@ -3,13 +3,29 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Spin as Hamburger } from "hamburger-react"
-import { useScrollLock } from "@/hooks/useScrollLock";
+import {
+    disableBodyScroll,
+    enableBodyScroll,
+    clearAllBodyScrollLocks,
+  } from 'body-scroll-lock-upgrade';
 
 function Navbar() {
     const router = useRouter();
     const [isOpen, setOpen] = useState(false);
 
-    useScrollLock(isOpen);
+    useEffect(() => {
+        const targetElement = document.getElementById('menu');
+        
+        if (isOpen && targetElement) {
+            disableBodyScroll(targetElement);
+        } else if (targetElement) {
+            enableBodyScroll(targetElement);
+        }
+
+        return () => {
+            clearAllBodyScrollLocks();
+        };
+    }, [isOpen]);
 
     return (
         <>
