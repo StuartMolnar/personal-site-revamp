@@ -15,8 +15,8 @@ type EmblaOptionsType = {
 
 const OPTIONS: EmblaOptionsType = { align: "start", loop: true }
 const SLIDE_COUNT = 4
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-const IMAGES = ["RioProject.png", "WSProject.png", "RioProject.png", "WSProject.png"]
+const SLIDES = Array.from({ length: SLIDE_COUNT }, (_, index) => index);
+const IMAGES = ["western-star-image.png", "league-logo.png", "rio-image.png", "leaguexvalorant-logo.png"]
 
 function WesternStar() {
     return (
