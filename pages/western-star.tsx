@@ -23,7 +23,7 @@ function WesternStar() {
       <div id="screen-top">
         <Navbar />
           
-        <main className="min-h-screen px-10 pt-8 pb-10 font-normal text-black bg-white md:pt-16 md:px-32">
+        <main className="min-h-screen px-6 pt-8 pb-10 font-normal text-black bg-white md:pt-16 md:px-32">
           <div className="flex flex-col justify-between xl:flex-row xl:items-center gap-y-2">
 
             <h1 className="font-heavy text-title md:text-hero">Western Star Resources</h1>
