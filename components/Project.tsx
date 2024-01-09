@@ -7,9 +7,10 @@ interface ProjectProps {
     title: string;
     description: string;
     href: string;
+    width_padding?: string;
   }
 
-function Project({ bgColor, imgSrc, title, description, href }: ProjectProps) {
+function Project({ bgColor, imgSrc, title, description, href, width_padding }: ProjectProps) {
   
     return (
       <div className="relative aspect-[85/66] rounded-xl group">
@@ -18,7 +19,7 @@ function Project({ bgColor, imgSrc, title, description, href }: ProjectProps) {
           <p className="mt-2">{description}</p>
           <button className="p-1.5 px-2 mt-4 rounded-3xl bg-red">&#10132; Read More</button>
         </Link>
-        <div className={`absolute inset-0 p-16 rounded-xl ${bgColor}`}>
+        <div className={`absolute inset-0 rounded-xl flex items-center ${bgColor} ${width_padding}`}>
           <Image
             src={`/${imgSrc}`}
             alt={imgSrc}
