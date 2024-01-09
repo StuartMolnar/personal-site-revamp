@@ -32,11 +32,25 @@ function Navbar() {
         setOpen(false);
     };
 
-    const handleLinkClick = (e: React.MouseEvent) => {
-        e.stopPropagation();
-    };
-
     useScrollLock(isOpen);
+
+    // update height of menu to account for address bar on mobile devices
+    useEffect(() => {
+        const updateHeight = () => {
+            const menuElement = document.getElementById('menu');
+            if (menuElement) {
+                menuElement.style.height = `${window.innerHeight}px`;
+            }
+        };
+    
+        window.addEventListener('resize', updateHeight);
+    
+        updateHeight();
+    
+        return () => {
+            window.removeEventListener('resize', updateHeight);
+        };
+    }, []);
 
     return (
         <>
@@ -78,8 +92,7 @@ function Navbar() {
                 <Hamburger toggled={isOpen} toggle={setOpen} direction="left" distance="sm" />
             </div>
 
-            <div className={`z-20 flex flex-col gap-y-8 absolute items-center justify-center bg-black text-white text-header w-full h-full transition-all duration-300 ease-in-out `} 
-            style={menuStyle} onClick={closeMenu}>
+            <div id="menu" className="absolute z-20 flex flex-col items-center justify-center w-full text-white transition-all duration-300 ease-in-out bg-black gap-y-8 text-header" style={menuStyle} onClick={closeMenu}>
                 <Link href="/" className={`${router.pathname === "/" ? "font-bold" : ""}`}>Home</Link>
                 <Link href="/#projects" className={`${router.pathname !== "/" ? "font-bold" : ""}`}>Work & Projects</Link>
                 <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="">Résumé</a>
