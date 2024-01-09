@@ -51,7 +51,7 @@ function Navbar() {
                 <Hamburger toggled={isOpen} toggle={setOpen} direction="left" distance="sm" />
             </div>
 
-            <div id="menu" className={`fixed inset-0 z-20 w-full h-[200%] text-white bg-black text-header transition-transform duration-300 ease-in-out ${isOpen ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
+            <div id="menu" className={`fixed inset-0 z-20 w-full h-[120%] text-white bg-black text-header transition-transform duration-300 ease-in-out ${isOpen ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
                 <div className={`flex flex-col items-center w-full h-full gap-y-8 transition-all duration-300 ease-in-out ${isOpen ? 'mt-[40vh]' : ''}`}>
                     <Link href="/" className={`${router.pathname === "/" ? "font-bold" : ""}`}>Home</Link>
                     <Link href="/#projects" className={`${router.pathname !== "/" ? "font-bold" : ""}`}>Work & Projects</Link>
