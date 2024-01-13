@@ -53,9 +53,9 @@ function WesternStar() {
 
               In in viverra tortor, nec venenatis elit. Ut sed lorem in ex mollis dignissim. Nam posuere ac diam nec vulputate. Nam quis neque nibh. Proin tristique, eros ut sollicitudin aliquet, nisl quam luctus sapien, ac pellentesque mi justo vel erat. Sed non sapien massa. Phasellus at vulputate tortor. Cras facilisis vel velit in dignissim. Aliquam consequat libero mollis, gravida lacus nec, dignissim metus. Nunc eu posuere arcu.</p>
             </div>
-            <div className="flex-row md:w-[45%]">
+            <div className="flex-row md:w-[45%]"> 
               <h1 className="text-title font-heavy">Technologies</h1>
-              <div className="grid grid-cols-1 gap-6 pt-8 4sm:grid-cols-2 2sm:grid-cols-4 md:grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4">
+              <div className="flex flex-wrap gap-3 pt-8 md:gap-6">
                 <div className="flex items-center justify-center">
                     <TechButton imgSrc="" buttonText="JavaScript" />
                 </div>

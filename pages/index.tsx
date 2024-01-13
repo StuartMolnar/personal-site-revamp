@@ -3,19 +3,78 @@ import Navbar from "@/components/Navbar";
 import LinkButton from "@/components/LinkButton";
 import Project from "@/components/Project";
 import Footer from "@/components/Footer";
+import SlidingText from "@/components/SlidingText";
 import Image from "next/image";
 
 export default function Home() {
+
+  const DESCRIPTION = "full-stack developer"
+  const TEXTBLOCK = `const SlidingText: React.FC<SlidingTextProps> = ({ description, textBlock, width, interval = 500 }) => {
+    const [displayedText, setDisplayedText] = useState('');
+    const [isSliding, setIsSliding] = useState(true);
+    const [currentIndex, setCurrentIndex] = useState(0);   
+    const responsiveWidth = useResponsiveWidth(width);
+
+    const processedTextBlock = textBlock.replace(/\s+/g, ' ');
+
+    useEffect(() => {
+        if (!isSliding) {
+            setDisplayedText(description);
+            return;
+        }
+
+        const timer = setInterval(() => {
+            const textToShow = processedTextBlock.slice(currentIndex, currentIndex + description.length);
+            setDisplayedText(textToShow);
+            setCurrentIndex(prevIndex => (prevIndex + 1) % processedTextBlock.length);
+        }, interval);
+
+        return () => clearInterval(timer);
+    }, [description, processedTextBlock, interval, isSliding, currentIndex]);
+
+
+    const handleClick = () => {
+        setIsSliding(!isSliding);
+    };
+
+    const spanStyle: CSSProperties = {
+        display: 'inline-block',
+        minWidth: '{responsiveWidth}px',
+        maxWidth: '{responsiveWidth}px',
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        cursor: 'pointer',
+        verticalAlign: '-25.5%',
+        margin: '0 0.5rem',
+    };
+    
+
+
+    return (
+        <span onClick={handleClick} style={spanStyle} className="text-red text-title-sm sm:text-title lg:text-hero">{displayedText}</span>
+    );
+}
+
+export default SlidingText;`
+
   return (
     <div id="screen-top">
       < Navbar />
-      {/* adjust mx-32 value for different screen sizes in future */}
-      <main className="min-h-screen px-32 pb-10 font-normal text-black bg-white">
+      
+      <main className="min-h-screen px-6 pb-10 font-normal text-black bg-white md:px-12 lg:px-32">
         
         
-        <h1 className="pt-[15%] font-bold text-hero">I&apos;m Stuart, a <span className="text-red">full-stack developer</span> with a focus on creating user-centric digital solutions. Let&apos;s work together and make things happen!</h1>
+        <h1 className="pt-[15%] font-bold text-title-sm sm:text-title lg:text-hero select-none">
+          I&apos;m Stuart, a 
+          <SlidingText 
+            description={DESCRIPTION}
+            textBlock={TEXTBLOCK}
+            width={295}
+            interval={100}
+          /> 
+          with a focus on creating user-centric digital solutions. Let&apos;s work together and make things happen!</h1>
 
-        <div className="flex mt-6 space-x-4">
+        <div className="flex flex-wrap gap-4 mt-6">
           <LinkButton
             href="https://github.com/StuartMolnar"
             imgSrc="GitHub.svg"
@@ -32,23 +91,25 @@ export default function Home() {
             buttonText="Resume"
           />
         </div>
-        <a href="#projects" className="flex pt-[10%] space-x-2 font-medium">
-          <Image
-              src="/Double_Arrow_Down.svg"
-              alt="Arrow Pointing Down"
-              width={18}
-              height={18}
-          />
-          <p className="">
-            View my client works & personal projects
+        <a href="#projects" className="flex pt-[10%] space-x-2 font-medium hover:text-[#953A1D]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0_1_120" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+                  <rect width="24" height="24" fill="#D9D9D9"/>
+              </mask>
+              <g mask="url(#mask0_1_120)">
+                  <path d="M12 19L6 13L7.4 11.6L12 16.175L16.6 11.6L18 13L12 19ZM12 13L6 7.00001L7.4 5.60001L12 10.175L16.6 5.60001L18 7.00001L12 13Z" />
+              </g>
+          </svg>
+          <p>
+              View my client works & personal projects
           </p>
         </a>
 
         {/* adjust grid-cols-# for different screen sizes if necessary */}
-        <div id="projects" className="grid grid-cols-2 gap-4 pt-20">
+        <div id="projects" className="grid grid-cols-1 pt-20 space-y-4 md:gap-4 md:grid-cols-2 md:space-y-0">
           <Project bgColor="bg-gray" imgSrc="western-star-image.png" title="Western Star Resources" description="Front-End Development" href="western-star"/>
-          <Project bgColor="bg-black" imgSrc="league-logo.png" title="League of Legends Chat Assistant" description="Back-End Development" href="chat-bot" width_padding="p-36"/>
-          <Project bgColor="bg-black" imgSrc="leaguexvalorant-logo.png" title="League to Valorant Rank Converter" description="Full-Stack Development" href="ranked-converter" width_padding="p-32"/>
+          <Project bgColor="bg-black" imgSrc="league-logo.png" title="League of Legends Chat Assistant" description="Back-End Development" href="chat-bot" width_padding="p-12 lg:p-36"/>
+          <Project bgColor="bg-black" imgSrc="leaguexvalorant-logo.png" title="League to Valorant Rank Converter" description="Full-Stack Development" href="ranked-converter" width_padding="p-10 lg:p-32"/>
           <Project bgColor="bg-gray" imgSrc="rio-image.png" title="Rio Minerals Ltd." description="Front-End Development" href="western-star" width_padding="p-4"/>
         </div>
         

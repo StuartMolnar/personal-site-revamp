@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from 'react';
 
 interface ProjectProps {
     bgColor: string;
@@ -11,22 +12,32 @@ interface ProjectProps {
   }
 
 function Project({ bgColor, imgSrc, title, description, href, width_padding }: ProjectProps) {
+    const [isLinkVisible, setIsLinkVisible] = useState(false);
+
+    const handleMobileClick = () => {
+      if (window.innerWidth < 768) {
+          setIsLinkVisible(!isLinkVisible);
+      }
+  }
   
     return (
       <div className="relative aspect-[85/66] rounded-xl group">
-        <Link href={`/${href}`} className="absolute inset-0 z-10 flex flex-col items-center justify-center text-white transition-opacity duration-300 bg-black opacity-0 bg-opacity-80 rounded-xl text-body group-hover:opacity-100">
-          <h1 className="font-bold text-white text-title max-w-[80%]">{title}</h1>
-          <p className="mt-2">{description}</p>
-          <button className="p-1.5 px-2 mt-4 rounded-3xl bg-red">&#10132; Read More</button>
-        </Link>
-        <div className={`absolute inset-0 rounded-xl flex items-center ${bgColor} ${width_padding}`}>
-          <Image
-            src={`/${imgSrc}`}
-            alt={imgSrc}
-            width={9999}
-            height={9999}
-          />
+        <div onClick={handleMobileClick} className="cursor-pointer">
+          <div className={`absolute inset-0 rounded-xl flex items-center ${bgColor} ${width_padding}`}>
+              <Image
+                  src={`/${imgSrc}`}
+                  alt={imgSrc}
+                  width={9999}
+                  height={9999}
+              />
+          </div>
         </div>
+        <Link href={`/${href}`} className={`absolute inset-0 z-10 flex flex-col items-center text-center justify-center transition-opacity duration-300 bg-black bg-opacity-80 rounded-xl text-body ${isLinkVisible || 'md:group-hover:opacity-100'} ${isLinkVisible ? 'flex opacity-100' : 'hidden md:flex md:opacity-0'} text-white`}>
+          <h1 className="font-bold text-white text-normal md:text-title max-w-[80%]">{title}</h1>
+          <p className="mt-2 text-body md:text-normal">{description}</p>
+          <button className="p-2 mt-4 rounded-3xl bg-red hover:brightness-125 hover:scale-105">&#10132; Read More</button>
+        </Link>
+        
       </div>
     
     );

@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,16 +9,32 @@ interface LinkButtonProps {
 }
 
   const LinkButton: React.FC<LinkButtonProps> = ({ href, imgSrc, buttonText }) => {  
+    const [screenWidth, setScreenWidth] = useState<number | null>(null);
+
+    const onWindowResize = () => {
+        setScreenWidth(window.innerWidth);
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', onWindowResize);
+
+        return () => window.removeEventListener('resize', onWindowResize);
+    }, []);
+
+    const MOBILE_BREAKPOINT = 768;
+    const imageSize = screenWidth && screenWidth < MOBILE_BREAKPOINT ? 14 : 18;
+
     return (
         <Link href={href} target="_blank" rel="noopener noreferrer" className="">
-            <div className="flex md:scale-100 scale-75 items-center justify-start min-w-[115px] max-w-[150px] px-4 py-2 space-x-2 cursor-pointer rounded-[99px] bg-red">
+            <div className="flex items-center justify-start px-4 py-2 space-x-2 cursor-pointer rounded-[99px] hover:brightness-125 hover:bg-black hover:scale-105 bg-red">
                 <Image
                     src={`/${imgSrc}`}
                     alt={buttonText}
-                    width={18}
-                    height={18}
+                    width={imageSize}
+                    height={imageSize}
+                    style={{ minWidth: `${imageSize}px`, minHeight: `${imageSize}px` }}
                 />
-                <span className="font-medium text-white">{buttonText}</span>
+                <span className="font-medium text-white text-body md:text-normal">{buttonText}</span>
             </div>
         </Link>
     );

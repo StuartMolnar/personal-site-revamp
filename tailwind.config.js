@@ -25,8 +25,10 @@ module.exports = {
       },
       fontSize: {
         'body': '14px',
+        'normal': '16px',
         'header': '18px',
         'title': '30px',
+        'title-sm': '24px',
         'hero': '48px',
 
       },
