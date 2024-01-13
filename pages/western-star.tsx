@@ -27,7 +27,7 @@ function WesternStar() {
           <div className="flex flex-col justify-between xl:flex-row xl:items-center gap-y-2">
 
             <h1 className="font-heavy text-title md:text-hero">Western Star Resources</h1>
-            <div className="flex -ml-[14px] md:gap-x-4 md:-ml-0">
+            <div className="flex gap-x-2 md:gap-x-4">
               <LinkButton
                 href="https://westernstarresources.com/"
                 imgSrc="Live.svg"
