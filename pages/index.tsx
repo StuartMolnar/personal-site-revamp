@@ -4,58 +4,11 @@ import LinkButton from "@/components/LinkButton";
 import Project from "@/components/Project";
 import Footer from "@/components/Footer";
 import SlidingText from "@/components/SlidingText";
-import Image from "next/image";
 
 export default function Home() {
 
-  const DESCRIPTION = "full-stack developer"
-  const TEXTBLOCK = `const SlidingText: React.FC<SlidingTextProps> = ({ description, textBlock, width, interval = 500 }) => {
-    const [displayedText, setDisplayedText] = useState('');
-    const [isSliding, setIsSliding] = useState(true);
-    const [currentIndex, setCurrentIndex] = useState(0);   
-    const responsiveWidth = useResponsiveWidth(width);
-
-    const processedTextBlock = textBlock.replace(/\s+/g, ' ');
-
-    useEffect(() => {
-        if (!isSliding) {
-            setDisplayedText(description);
-            return;
-        }
-
-        const timer = setInterval(() => {
-            const textToShow = processedTextBlock.slice(currentIndex, currentIndex + description.length);
-            setDisplayedText(textToShow);
-            setCurrentIndex(prevIndex => (prevIndex + 1) % processedTextBlock.length);
-        }, interval);
-
-        return () => clearInterval(timer);
-    }, [description, processedTextBlock, interval, isSliding, currentIndex]);
-
-
-    const handleClick = () => {
-        setIsSliding(!isSliding);
-    };
-
-    const spanStyle: CSSProperties = {
-        display: 'inline-block',
-        minWidth: '{responsiveWidth}px',
-        maxWidth: '{responsiveWidth}px',
-        overflow: 'hidden',
-        whiteSpace: 'nowrap',
-        cursor: 'pointer',
-        verticalAlign: '-25.5%',
-        margin: '0 0.5rem',
-    };
-    
-
-
-    return (
-        <span onClick={handleClick} style={spanStyle} className="text-red text-title-sm sm:text-title lg:text-hero">{displayedText}</span>
-    );
-}
-
-export default SlidingText;`
+  const WORD = "full-stack developer"
+  
 
   return (
     <div id="screen-top">
@@ -67,10 +20,9 @@ export default SlidingText;`
         <h1 className="pt-[15%] font-bold text-title-sm sm:text-title lg:text-hero select-none">
           I&apos;m Stuart, a 
           <SlidingText 
-            description={DESCRIPTION}
-            textBlock={TEXTBLOCK}
-            width={295}
-            interval={100}
+            word={WORD}
+            intervalReveal={150}
+            randomizesPerReveal={4}
           /> 
           with a focus on creating user-centric digital solutions. Let&apos;s work together and make things happen!</h1>
 

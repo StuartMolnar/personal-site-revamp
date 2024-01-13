@@ -1,88 +1,57 @@
-import React, { useState, useEffect, CSSProperties } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface SlidingTextProps {
-    description: string;
-    textBlock: string;
-    width: number;
-    interval?: number;
+  word: string;
+  intervalReveal?: number;
+  randomizesPerReveal?: number;
 }
 
-const breakpoints = {
-    sm: 640,
-    md: 768,
-    lg: 1024,
+const SlidingText: React.FC<SlidingTextProps> = ({ word, intervalReveal = 200, randomizesPerReveal = 4 }) => {
+  const [displayedText, setDisplayedText] = useState<string>('');
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const randomCharacters = "1234567890";
+
+  const getRandomCharacter = (char: string) => {
+    return char === ' ' ? ' ' : randomCharacters[Math.floor(Math.random() * randomCharacters.length)];
   };
 
-  const useResponsiveWidth = (initialWidth: number) => {
-    const [responsiveWidth, setResponsiveWidth] = useState(initialWidth);
-  
-    useEffect(() => {
-      const updateWidth = () => {
-        const windowWidth = window.innerWidth;
-        if (windowWidth < breakpoints.sm) {
-          setResponsiveWidth(initialWidth * 0.79);
-        } else if (windowWidth < breakpoints.md) {
-          setResponsiveWidth(initialWidth * 1);
-        } else if (windowWidth < breakpoints.lg) {
-          setResponsiveWidth(initialWidth * 1);
-        } else {
-          setResponsiveWidth(initialWidth * 1.60);
-        }
-      };
-  
-      window.addEventListener('resize', updateWidth);
-      updateWidth();
-  
-      return () => window.removeEventListener('resize', updateWidth);
-    }, [initialWidth]);
-  
-    return responsiveWidth;
+  useEffect(() => {
+    const randomizedText = Array.from(word).map(char => getRandomCharacter(char)).join('');
+    setDisplayedText(randomizedText);
+  }, [word]);
+
+  const revealNextCharacter = () => {
+    if (currentIndex < word.length) {
+        setCurrentIndex(currentIndex + 1);
+    }
   };
 
-const SlidingText: React.FC<SlidingTextProps> = ({ description, textBlock, width, interval = 500 }) => {
-    const [displayedText, setDisplayedText] = useState('');
-    const [isSliding, setIsSliding] = useState(true);
-    const [currentIndex, setCurrentIndex] = useState(0);   
-    const responsiveWidth = useResponsiveWidth(width);
+  useEffect(() => {
+    const revealInterval = setInterval(revealNextCharacter, intervalReveal);
+    return () => clearInterval(revealInterval);
+  }, [currentIndex, intervalReveal]);
 
-    const processedTextBlock = textBlock.replace(/\s+/g, ' ');
+  useEffect(() => {
+    const randomizeInterval = setInterval(() => {
+      setDisplayedText(prevText =>
+        prevText
+          .split('')
+          .map((char, index) => index < currentIndex ? char : getRandomCharacter(char))
+          .join('')
+      );
+    }, intervalReveal / randomizesPerReveal);
+    return () => clearInterval(randomizeInterval);
+  }, [currentIndex, intervalReveal, randomizesPerReveal]);
 
-    useEffect(() => {
-        if (!isSliding) {
-            setDisplayedText(description);
-            return;
-        }
+  useEffect(() => {
+    const updatedText = word
+        .split('')
+        .map((char, index) => index < currentIndex ? char : getRandomCharacter(char))
+        .join('');
+    setDisplayedText(updatedText);
+  }, [currentIndex, word]);
 
-        const timer = setInterval(() => {
-            const textToShow = processedTextBlock.slice(currentIndex, currentIndex + description.length);
-            setDisplayedText(textToShow);
-            setCurrentIndex(prevIndex => (prevIndex + 1) % processedTextBlock.length);
-        }, interval);
-
-        return () => clearInterval(timer);
-    }, [description, processedTextBlock, interval, isSliding, currentIndex]);
-
-
-    const handleClick = () => {
-        setIsSliding(!isSliding);
-    };
-
-    const spanStyle: CSSProperties = {
-        display: 'inline-block',
-        minWidth: `${responsiveWidth}px`,
-        maxWidth: `${responsiveWidth}px`,
-        overflow: 'hidden',
-        whiteSpace: 'nowrap',
-        cursor: 'pointer',
-        verticalAlign: '-25.5%',
-        margin: '0 0.5rem',
-    };
-    
-
-
-    return (
-        <span onClick={handleClick} style={spanStyle} className="text-red text-title-sm sm:text-title lg:text-hero">{displayedText}</span>
-    );
-}
+  return <span className="text-red"> {displayedText} </span>;
+};
 
 export default SlidingText;
