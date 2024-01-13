@@ -22,7 +22,7 @@ interface TechButtonProps {
     }, []);
 
     const MOBILE_BREAKPOINT = 768;
-    const imageSize = screenWidth && screenWidth < MOBILE_BREAKPOINT ? 14 : 18;
+    const imageSize = screenWidth && screenWidth < MOBILE_BREAKPOINT ? 16 : 18;
 
     return (
         <div>
