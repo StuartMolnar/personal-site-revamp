@@ -34,7 +34,7 @@ interface LinkButtonProps {
                     height={imageSize}
                     style={{ minWidth: `${imageSize}px`, minHeight: `${imageSize}px` }}
                 />
-                <span className="font-medium text-white text-body md:text-normal">{buttonText}</span>
+                <span className="font-medium text-white text-body-sm md:text-normal">{buttonText}</span>
             </div>
         </Link>
     );

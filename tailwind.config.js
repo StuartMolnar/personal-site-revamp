@@ -24,9 +24,10 @@ module.exports = {
         'poppins': ['Poppins', 'sans-serif'],
       },
       fontSize: {
-        'body': '14px',
-        'normal': '16px',
-        'header': '18px',
+        'body-sm': '14px',
+        'body': '16px',
+        'body-lg': '18px',
+        'title-lg': '36px',
         'title': '30px',
         'title-sm': '24px',
         'hero': '48px',

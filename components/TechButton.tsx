@@ -36,7 +36,7 @@ interface TechButtonProps {
                         style={{ minWidth: `${imageSize}px`, minHeight: `${imageSize}px` }}
                     />
                 )}
-                <span className="w-full font-medium text-center text-white text-body md:text-normal">{buttonText}</span>
+                <span className="text-white text-body-sm md:text-normal">{buttonText}</span>
             </div>
         </div>
     );
