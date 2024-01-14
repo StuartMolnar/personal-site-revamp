@@ -40,7 +40,7 @@ function Navbar() {
                     />
                 </Link>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-10">
                 <Link href="/">
                 <p className={`hover:text-red ${router.pathname === "/" ? "font-bold text-red" : ""}`}>Home</p>
                 </Link>
