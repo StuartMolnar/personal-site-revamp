@@ -5,7 +5,6 @@ import EmblaCarousel from "@/carousel/EmblaCarousel"
 import LinkButton from "@/components/LinkButton";
 import TechButton from "@/components/TechButton";
 import "@/css/embla.css"
-import { isImportDeclaration } from "typescript";
 
 type EmblaOptionsType = {
   align?: string
@@ -23,7 +22,7 @@ function WesternStar() {
       <div id="screen-top">
         <Navbar />
           
-        <main className="min-h-screen px-6 pt-8 pb-10 font-normal text-black bg-white md:pt-16 md:px-32">
+        <main className="min-h-screen px-6 pt-8 pb-10 font-normal text-black bg-white md:px-12 xl:pt-16 xl:px-32">
           <div className="flex flex-col justify-between xl:flex-row xl:items-center gap-y-2">
 
             <h1 className="font-heavy text-title md:text-hero">Western Star Resources</h1>
@@ -42,20 +41,20 @@ function WesternStar() {
 
           </div>
           
-          <div className="pt-8 md:pt-10">          
+          <div className="pt-8 xl:pt-10">          
             <EmblaCarousel slides={SLIDES} options={OPTIONS} images={IMAGES} />
           </div>
 
-          <div className="flex flex-col-reverse md:flex-row md:gap-x-[10%] gap-y-10 pt-10 md:pt-32">
-            <div className="flex-row md:w-[45%]">
+          <div className="flex flex-col-reverse xl:flex-row xl:gap-x-[10%] gap-y-10 pt-10 xl:pt-32">
+            <div className="flex-row xl:w-[45%]">
               <h1 className="text-title font-heavy">Title</h1>
               <p className="pt-8 text-body-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate fringilla lectus, vitae tempus ex porttitor sit amet. Mauris pellentesque ac neque nec lobortis. Aenean dictum justo vel mattis efficitur. Sed quis elit vel lorem pretium vehicula eu eu ligula. Cras consequat rutrum felis eget pellentesque. Vestibulum accumsan fringilla magna, vel pharetra dolor aliquam et. Nulla non sapien vitae massa aliquam viverra sit amet id tellus. Vivamus sed tincidunt tellus. Nullam ac arcu non neque tincidunt imperdiet. Vivamus nec ligula at lorem consequat commodo.
 
               In in viverra tortor, nec venenatis elit. Ut sed lorem in ex mollis dignissim. Nam posuere ac diam nec vulputate. Nam quis neque nibh. Proin tristique, eros ut sollicitudin aliquet, nisl quam luctus sapien, ac pellentesque mi justo vel erat. Sed non sapien massa. Phasellus at vulputate tortor. Cras facilisis vel velit in dignissim. Aliquam consequat libero mollis, gravida lacus nec, dignissim metus. Nunc eu posuere arcu.</p>
             </div>
-            <div className="flex-row md:w-[45%]"> 
+            <div className="flex-row xl:w-[45%]"> 
               <h1 className="text-title font-heavy">Technologies</h1>
-              <div className="flex flex-wrap gap-3 pt-8 md:gap-6">
+              <div className="flex flex-wrap gap-3 pt-8 xl:gap-6">
                 <div className="flex items-center justify-center">
                     <TechButton imgSrc="" buttonText="JavaScript" />
                 </div>

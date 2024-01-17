@@ -1,4 +1,4 @@
-// Import the Link component from Next.js
+import React, { useState } from 'react';
 import Navbar from "@/components/Navbar";
 import LinkButton from "@/components/LinkButton";
 import Project from "@/components/Project";
@@ -6,15 +6,20 @@ import Footer from "@/components/Footer";
 import SlidingText from "@/components/SlidingText";
 
 export default function Home() {
-
   const WORD = "full-stack developer"
+
+  const [activeProjectMobile, setActiveProjectMobile] = useState<string | null>(null);
+
+  const handleProjectClickMobile = (projectName: string) => {
+    setActiveProjectMobile(projectName);
+  }
   
 
   return (
     <div id="screen-top">
       < Navbar />
       
-      <main className="min-h-screen px-6 pb-10 font-normal text-black bg-white md:px-12 lg:px-32">
+      <main className="min-h-screen px-6 pb-10 font-normal text-black bg-white md:px-12 xl:px-32">
         
         
         <h1 className="pt-[15%] font-bold text-title-sm sm:text-title lg:text-hero select-none">
@@ -58,11 +63,23 @@ export default function Home() {
         </a>
 
         {/* adjust grid-cols-# for different screen sizes if necessary */}
-        <div id="projects" className="grid grid-cols-1 pt-20 space-y-4 md:gap-4 md:grid-cols-2 md:space-y-0">
-          <Project bgColor="bg-gray" imgSrc="western-star-image.png" title="Western Star Resources" description="Front-End Development" href="western-star"/>
-          <Project bgColor="bg-black" imgSrc="leaguexvalorant-logo.png" title="League to Valorant Rank Converter" description="Full-Stack Development" href="ranked-converter" width_padding="p-10 lg:p-32"/>
-          <Project bgColor="bg-black" imgSrc="league-logo.png" title="League of Legends Chat Assistant" description="Back-End Development" href="chat-bot" width_padding="p-12 lg:p-36"/>
-          <Project bgColor="bg-gray" imgSrc="rio-image.png" title="Rio Minerals Ltd." description="Front-End Development" href="western-star" width_padding="p-4"/>
+        <div id="projects" className="grid grid-cols-1 pt-20 space-y-4 lg:gap-4 lg:grid-cols-2 lg:space-y-0">
+          <Project 
+            onClick={() => handleProjectClickMobile('western-star')}
+            isActive={activeProjectMobile === 'western-star'} 
+            bgColor="bg-gray" imgSrc="western-star-image.png" title="Western Star Resources" description="Front-End Development" href="western-star"/>
+          <Project 
+            onClick={() => handleProjectClickMobile('ranked-converter')}
+            isActive={activeProjectMobile === 'ranked-converter'} 
+            bgColor="bg-black" imgSrc="leaguexvalorant-logo.png" title="League to Valorant Rank Converter" description="Full-Stack Development" href="ranked-converter" width_padding="p-10 lg:p-32"/>
+          <Project 
+            onClick={() => handleProjectClickMobile('chat-bot')}
+            isActive={activeProjectMobile === 'chat-bot'} 
+            bgColor="bg-black" imgSrc="league-logo.png" title="League of Legends Chat Assistant" description="Back-End Development" href="chat-bot" width_padding="p-12 lg:p-36"/>
+          <Project 
+            onClick={() => handleProjectClickMobile('rio-minerals')}
+            isActive={activeProjectMobile === 'rio-minerals'} 
+            bgColor="bg-gray" imgSrc="rio-image.png" title="Rio Minerals Ltd." description="Front-End Development" href="western-star" width_padding="p-4"/>
         </div>
         
       </main>

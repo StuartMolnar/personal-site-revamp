@@ -29,7 +29,7 @@ function Navbar() {
 
     return (
         <>
-        <nav className="items-center justify-between hidden px-6 pt-10 text-black bg-white md:px-12 lg:px-32 text-header font-body md:flex">
+        <nav className="items-center justify-between hidden px-6 pt-10 text-black bg-white md:px-12 xl:px-32 text-header font-body md:flex">
             <div className="flex items-center">
                 <Link href="/">
                     <Image

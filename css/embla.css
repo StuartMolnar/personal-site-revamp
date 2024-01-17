@@ -65,11 +65,11 @@
 }
 
 .embla__button--prev {
-    left: -48px;
+    left: -64px;
 }
 
 .embla__button--next {
-    right: -48px;
+    right: -64px;
 }
 
 .embla__button__svg {
@@ -109,14 +109,14 @@
 
 /* Mobile Styles */
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
     .embla__button {
         width: 24px;
         height: 24px;
     }
 
     .embla__button--prev {
-            left: -36px;
+        left: -36px;
     }
 
     .embla__button--next {
