@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState, useEffect } from 'react';
+import { MOBILE_BREAKPOINT } from "@/constants/constants";
 
 interface TechButtonProps {
     imgSrc?: string;
@@ -21,7 +22,6 @@ interface TechButtonProps {
         return () => window.removeEventListener('resize', onWindowResize);
     }, []);
 
-    const MOBILE_BREAKPOINT = 768;
     const imageSize = screenWidth && screenWidth < MOBILE_BREAKPOINT ? 16 : 18;
 
     return (
