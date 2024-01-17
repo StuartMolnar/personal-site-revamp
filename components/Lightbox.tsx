@@ -16,7 +16,6 @@ const Lightbox = ({ imgSrc, altText }: LightboxProps) => {
   const lightboxRef = useRef<HTMLDivElement>(null); // Use useRef here
 
   useEffect(() => {
-    // Now we access the current property of the ref
     const targetElement = lightboxRef.current;
     
     if (isOpen && targetElement) {
@@ -25,7 +24,7 @@ const Lightbox = ({ imgSrc, altText }: LightboxProps) => {
       enableBodyScroll(targetElement);
     }
     
-    // Clean up scroll locks when the component unmounts
+
     return () => {
       if (targetElement) {
         enableBodyScroll(targetElement);
