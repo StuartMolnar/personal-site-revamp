@@ -6,6 +6,7 @@ import {
   NextButton,
   usePrevNextButtons
 } from './EmblaCarouselArrowButtons'
+import Lightbox from '@/components/Lightbox';
 
 const EmblaCarousel = (props) => {
   const { slides, options, images } = props
@@ -27,17 +28,16 @@ const EmblaCarousel = (props) => {
         <div className="embla__container">
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
-              <img
-                className="embla__slide__img"
-                src={images[index % images.length]}
-                alt={`Slide ${index + 1}`}
+              <Lightbox
+                imgSrc={images[index % images.length]}
+                altText={`Slide ${index + 1}`}
               />
             </div>
           ))}
         </div>
       </div>
 
-      <div className="embla__buttons">
+      <div className="hidden embla__buttons xl:flex">
         <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
         <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
       </div>
