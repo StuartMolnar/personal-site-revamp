@@ -1,19 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from 'body-scroll-lock-upgrade';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock-upgrade';
+import isMobileDevice from '@/utils/isMobileDevice';
+import resetZoom from '@/utils/resetZoom';
 
 interface LightboxProps {
   imgSrc: string;
   altText: string;
 }
 
-const Lightbox = ({ imgSrc, altText }: LightboxProps) => {
+const Lightbox: React.FC<LightboxProps> = ({ imgSrc, altText }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const lightboxRef = useRef<HTMLDivElement>(null); // Use useRef here
+  const lightboxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const targetElement = lightboxRef.current;
@@ -23,7 +21,6 @@ const Lightbox = ({ imgSrc, altText }: LightboxProps) => {
     } else if (targetElement) {
       enableBodyScroll(targetElement);
     }
-    
 
     return () => {
       if (targetElement) {
@@ -35,6 +32,10 @@ const Lightbox = ({ imgSrc, altText }: LightboxProps) => {
 
   const toggleLightbox = () => {
     setIsOpen(!isOpen);
+
+    if (!isOpen && isMobileDevice()) {
+      resetZoom();
+    }
   };
 
   const lightboxContent = (
@@ -59,9 +60,9 @@ const Lightbox = ({ imgSrc, altText }: LightboxProps) => {
       {isOpen && ReactDOM.createPortal(
         lightboxContent,
         document.body
-        )}
+      )}
     </div>
   );
 };
-    
+
 export default Lightbox;
