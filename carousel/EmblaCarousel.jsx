@@ -31,6 +31,7 @@ const EmblaCarousel = (props) => {
               <Lightbox
                 imgSrc={images[index % images.length]}
                 altText={`Slide ${index + 1}`}
+                carousel={true}
               />
             </div>
           ))}

@@ -9,9 +9,10 @@ import {
 interface LightboxProps {
   imgSrc: string;
   altText: string;
+  carousel?: boolean;
 }
 
-const Lightbox = ({ imgSrc, altText }: LightboxProps) => {
+const Lightbox = ({ imgSrc, altText, carousel }: LightboxProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const lightboxRef = useRef<HTMLDivElement>(null);
 
@@ -38,14 +39,14 @@ const Lightbox = ({ imgSrc, altText }: LightboxProps) => {
   };
 
   const lightboxContent = (
-    <div ref={lightboxRef} className="fixed inset-0 z-50 flex flex-col items-end justify-center px-6 bg-black xl:px-32 md:px-12 bg-opacity-90" onClick={toggleLightbox} >
-      <button onClick={toggleLightbox} className="p-2 mb-4 text-white rounded md:mb-6 xl:mb-8 focus:outline-none">
+    <div ref={lightboxRef} className="fixed inset-0 z-50 flex flex-col items-end justify-center py-10 bg-black bg-opacity-90" onClick={toggleLightbox} >
+      <button onClick={toggleLightbox} className="p-2 m-4 text-white rounded md:m-6 xl:m-8 focus:outline-none">
         <svg width="24" height="24" viewBox="0 0 24 24">
           <path d="M24 2.4L21.6 0 12 9.6 2.4 0 0 2.4 9.6 12 0 21.6 2.4 24 12 14.4 21.6 24 24 21.6 14.4 12z" fill="#FFFFFF"/>
         </svg>
       </button>
-      <div className="max-h-full bg-white rounded-lg p-4overflow-auto">
-        <img src={imgSrc} alt={altText} className="h-auto max-w-full" />
+      <div className="max-h-full p-4 m-4 overflow-auto bg-white rounded-lg md:m-6 xl:m-8">
+        <img src={imgSrc} alt={altText} className="w-auto max-h-full mx-auto" />
       </div>
       
     </div>
@@ -57,7 +58,7 @@ const Lightbox = ({ imgSrc, altText }: LightboxProps) => {
         src={imgSrc}
         alt={altText}
         onClick={toggleLightbox}
-        className="cursor-pointer"
+        className={`cursor-pointer ${carousel ? 'embla__slide__img': ''}`}
       />
       {isOpen && ReactDOM.createPortal(
         lightboxContent,
