@@ -28,6 +28,7 @@
 
 .embla__slide__img {
     display: block;
+    padding: 15px;
     max-height: 600px; 
     width: 100%;
     max-width: 100%;
@@ -128,5 +129,13 @@
     .embla__dot {
         width: 8px;
         height: 8px;
+    }
+    .embla__slide__img {
+        padding: 8px;
+    }
+    @media (max-width: 768px) {
+        .embla__slide__img {
+            padding: 1px;
+        }
     }
 }
