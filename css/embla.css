@@ -133,9 +133,10 @@
     .embla__slide__img {
         padding: 8px;
     }
-    @media (max-width: 768px) {
-        .embla__slide__img {
-            padding: 1px;
-        }
+}
+
+@media (max-width: 768px) {
+    .embla__slide__img {
+        padding: 1px;
     }
 }
