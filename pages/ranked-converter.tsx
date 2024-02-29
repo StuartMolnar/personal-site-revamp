@@ -5,6 +5,7 @@ import EmblaCarousel from "@/carousel/EmblaCarousel"
 import LinkButton from "@/components/LinkButton";
 import TechButton from "@/components/TechButton";
 import "@/css/embla.css"
+import Lightbox from '@/components/Lightbox';
 
 type EmblaOptionsType = {
   align?: string
@@ -12,9 +13,9 @@ type EmblaOptionsType = {
 }
 
 const OPTIONS: EmblaOptionsType = { align: "start", loop: true }
-const SLIDE_COUNT = 2
+const SLIDE_COUNT = 7
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-const IMAGES = ["ranked-converter/db-schema.png", "ranked-converter/index-page.png"]
+const IMAGES = ["ranked-converter/db-schema.png", "ranked-converter/index-page.png", "ranked-converter/azure-commands.png", "ranked-converter/azure-cli.png", "ranked-converter/azure-portal.png", "ranked-converter/code-processor.png", "ranked-converter/code-scraper.png"]
 
 function RankedConverter() {
     return (
@@ -171,8 +172,14 @@ function RankedConverter() {
             <div className="flex flex-col-reverse xl:flex-row xl:gap-x-[10%] gap-y-10 pt-10 xl:pt-32">
               <div className="flex-row xl:w-[45%]">
                 <h1 className="text-title font-heavy">Web Scraping Service</h1>
-                <div className="xl:hidden">
-                  photo here
+                <div className="pt-6 xl:hidden">
+                  
+                  <Lightbox
+                    imgSrc={'ranked-converter/code-scraper.png'}
+                    altText={'Web Scraping Photo'}
+                    carousel={false}
+                    className="object-cover w-full max-h-[400px] rounded"
+                  />
                 </div>
                 <p className="pt-8 xl:w-2/3 text-body-sm">For my web-scraping, I created two services: <span className="font-bold">league_data</span> and <span className="font-bold">valorant_data</span>. Both of these use NodeJS and Puppeteer for web scraping and use Supabase’s NodeJS library to store the data they retrieve. They both function very similarly, too, with the following structure: </p>
                 <div className="max-w-lg pt-6 text-body-sm">
@@ -200,28 +207,44 @@ function RankedConverter() {
 
               </div>
               
-              <div className="hidden xl:block flex-row xl:w-[45%]">
-                photo here
+              <div className="hidden pt-6 xl:block">
+                <Lightbox
+                  imgSrc={'ranked-converter/code-scraper.png'}
+                  altText={'Web Scraping Photo'}
+                  carousel={false}
+                  className="object-cover w-full max-h-[700px] rounded"
+                />
               </div>
             </div>
 
 
             <div className="flex flex-col-reverse xl:flex-row xl:gap-x-[10%] gap-y-10 pt-10 xl:pt-32">
               
-              <div className="xl:w-[45%]">
-                <img src="ranked-converter/db-schema.png" alt="Database schema" className="hidden object-cover w-full xl:block" />
+              <div className="xl:w-[45%] hidden xl:block">
+              <Lightbox
+                    imgSrc={'ranked-converter/db-schema.png'}
+                    altText={'Database schema'}
+                    carousel={false}
+                    className="object-cover w-full rounded"
+                  />
               </div>
             
               <div className="xl:w-[45%]">
                 <h1 className="text-title font-heavy">Database Service</h1>
                 <div className="pt-6 xl:hidden">
-                  <img src="ranked-converter/db-schema.png" alt="Database schema" className="object-cover w-full max-h-[400px] rounded-md " />
+                  
+                  <Lightbox
+                    imgSrc={'ranked-converter/db-schema.png'}
+                    altText={'Database schema'}
+                    carousel={false}
+                    className="object-cover w-full max-h-[400px] rounded"
+                  />
                 </div>
                 <p className="pt-8 xl:w-2/3 text-body-sm">
                   The database service is quite simple, as it’s managed by Supabase. I created the tables and their assorted data using Supabase’s web UI and connected to it using their NodeJS library.
                 </p>
             
-                <p className="pt-8 xl:w-2/3 text-body-sm">Talk more about the schema here maybe</p>
+                <p className="pt-8 xl:w-2/3 text-body-sm">Talk more about the schema here maybe - talk about how i enabled row level security and read-only access for my frontend</p>
               </div>
             
             </div>
@@ -231,25 +254,37 @@ function RankedConverter() {
               <div className="flex-row xl:w-[45%]">
                 <h1 className="text-title font-heavy">Frontend UI</h1>
                 <div className="pt-6 xl:hidden">
-                  <img src="ranked-converter/index-page.png" alt="Database schema" className="object-cover w-full max-h-[400px] rounded-md " />
+                  <Lightbox
+                    imgSrc={'ranked-converter/index-page.png'}
+                    altText={'Index Page Photo'}
+                    carousel={false}
+                    className="object-cover w-full max-h-[400px] rounded"
+                  />
                 </div>
                 <p className="pt-8 xl:w-2/3 text-body-sm">The frontend for my app was created using NextJS and MaterialUI. The purpose of my app was to be a very simple tool.. It features a single index page with a dropdown menu and toggle window between games. MaterialUI was great as it comes with a lot of components to choose from. NextJS was mainly chosen due to familiarity and free hosting on Vercel.</p>
               </div>
               
               
-              <div className="xl:w-[45%]">
-                <img src="ranked-converter/index-page.png" alt="Database schema" className="hidden object-cover w-full xl:block max-h-[400px]" />
+              <div className="xl:w-[45%] hidden xl:block">
+                <Lightbox
+                  imgSrc={'ranked-converter/index-page.png'}
+                  altText={'Index Page Photo'}
+                  carousel={false}
+                  className="object-cover w-full max-h-[400px] rounded"
+                />
               </div>
             </div>
 
-            <div className="flex-row pt-10 xl:pt-32 ">
+            <div className="flex flex-col items-center justify-center pt-10 xl:pt-32 ">
               
-              <h1 className="text-title font-heavy">Takeaways</h1>
+              <h1 className="text-center text-title font-heavy">Takeaways</h1>
 
               <p className="pt-6 xl:w-1/2 text-body-sm">This project gave me opportunities to dive deeper into web-scraping, containerization, and Azure services. It also served as an interesting opportunity to research tools based on cost benefits, and I was ultimately successful in hosting this project free of personal charge.</p>
               <p className="pt-6 xl:w-1/2 text-body-sm">The technology I’m most proud of learning from this project, though, is definitely Azure’s Container Apps. It was a little confusing at the start, and a lot of their official documentation wasn’t working properly for me, so it required some extra research. In the end, it helped me save a lot on hosting costs versus hosting a permanent server.</p>
               <p className="pt-6 xl:w-1/2 text-body-sm">Ultimately, this project allowed me to gain experience combining technologies I previously learned - such as web-scraping and containerization - and also research new technologies like Supabase and Azure Container Apps.</p>
+
             </div>
+
 
         </main>
   
