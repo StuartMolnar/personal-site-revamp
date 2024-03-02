@@ -6,26 +6,30 @@ import LinkButton from "@/components/LinkButton";
 import TechButton from "@/components/TechButton";
 import "@/css/embla.css"
 
-type EmblaOptionsType = {
-  align?: string
-  loop?: boolean
-}
+// type EmblaOptionsType = {
+//   align?: string
+//   loop?: boolean
+// }
 
 
-const OPTIONS: EmblaOptionsType = { align: "start", loop: true }
-const SLIDE_COUNT = 4
-const SLIDES = Array.from({ length: SLIDE_COUNT }, (_, index) => index);
-const IMAGES = ["western-star-image.png", "league-logo.png", "rio-image.png", "leaguexvalorant-logo.png"]
+// const OPTIONS: EmblaOptionsType = { align: "start", loop: true }
+// const SLIDE_COUNT = 4
+// const SLIDES = Array.from({ length: SLIDE_COUNT }, (_, index) => index);
+// const IMAGES = ["western-star-image.png", "league-logo.png", "rio-image.png", "leaguexvalorant-logo.png"]
 
 function WesternStar() {
     return (
-      <div id="screen-top">
+      <div id="screen-top" className="min-h-screen text-black bg-white">
         <Navbar />
           
-        <main className="min-h-screen px-6 pt-8 pb-10 font-normal text-black bg-white md:px-12 xl:pt-16 xl:px-32">
-          <div className="flex flex-col justify-between xl:flex-row xl:items-center gap-y-2">
+        <main className="flex flex-col items-center justify-center max-w-[1250px] mx-auto min-h-[80vh] px-6 pt-8 pb-10 font-normal md:px-12 xl:pt-16 xl:px-32">
 
-            <h1 className="font-heavy text-title md:text-hero">Western Star Resources</h1>
+          <div className="flex flex-col gap-y-6">
+            <h1 className="font-heavy text-title md:text-hero">Page Under Construction</h1>
+
+            <p className="">This page will feature <a href="https://westernstarresources.com/" className="font-heavy text-red hover:text-black">westernstarresources.com</a>, a brand new investor-focused website to kick-off the launch of Western Star Resources as a junior mining company.</p>
+            <p className="">Feel free the view the <span className="font-heavy text-red">live site</span> or the <span className="font-heavy text-red">source code</span> below!</p>
+
             <div className="flex gap-x-2 md:gap-x-4">
               <LinkButton
                 href="https://westernstarresources.com/"
@@ -38,44 +42,40 @@ function WesternStar() {
                 buttonText="GitHub"
               />
             </div>
-
           </div>
           
-          <div className="pt-8 xl:pt-10">          
+
+        {/* <h2 className="pt-6 text-body-lg">A brand new investor-focused website to kick-off the launch of Western Star Resources as a junior mining company</h2>
+
+
+          <div className="pt-8 -mx-0 xl:pt-16">
+              <div className="border-t-[1.75px] border-black"></div>
+          </div>
+
+          <div className="flex pt-8 space-x-4 xl:pt-16">
+            <p>This page is currently under construction. Feel free to browse the <a href="https://westernstarresources.com/" className="font-bold text-red hover:text-black">live website</a> or the <a href="https://github.com/StuartMolnar/western-star" className="font-bold text-red hover:text-black">source code</a> in the meantime!</p>
+          </div> */}
+
+
+{/*           
+          <div className="flex pt-8 gap-x-2 md:gap-x-4">
+              <LinkButton
+                href="https://westernstarresources.com/"
+                imgSrc="Live.svg"
+                buttonText="Live Site"
+              />
+            <LinkButton
+                href="https://github.com/StuartMolnar/western-star"
+                imgSrc="GitHub.svg"
+                buttonText="GitHub"
+              />
+            </div> */}
+          
+          {/* <div className="pt-8 xl:pt-10">          
             <EmblaCarousel slides={SLIDES} options={OPTIONS} images={IMAGES} />
-          </div>
+          </div> */}
 
-          <div className="flex flex-col-reverse xl:flex-row xl:gap-x-[10%] gap-y-10 pt-10 xl:pt-32">
-            <div className="flex-row xl:w-[45%]">
-              <h1 className="text-title font-heavy">Title</h1>
-              <p className="pt-8 text-body-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vulputate fringilla lectus, vitae tempus ex porttitor sit amet. Mauris pellentesque ac neque nec lobortis. Aenean dictum justo vel mattis efficitur. Sed quis elit vel lorem pretium vehicula eu eu ligula. Cras consequat rutrum felis eget pellentesque. Vestibulum accumsan fringilla magna, vel pharetra dolor aliquam et. Nulla non sapien vitae massa aliquam viverra sit amet id tellus. Vivamus sed tincidunt tellus. Nullam ac arcu non neque tincidunt imperdiet. Vivamus nec ligula at lorem consequat commodo.
-
-              In in viverra tortor, nec venenatis elit. Ut sed lorem in ex mollis dignissim. Nam posuere ac diam nec vulputate. Nam quis neque nibh. Proin tristique, eros ut sollicitudin aliquet, nisl quam luctus sapien, ac pellentesque mi justo vel erat. Sed non sapien massa. Phasellus at vulputate tortor. Cras facilisis vel velit in dignissim. Aliquam consequat libero mollis, gravida lacus nec, dignissim metus. Nunc eu posuere arcu.</p>
-            </div>
-            <div className="flex-row xl:w-[45%]"> 
-              <h1 className="text-title font-heavy">Technologies</h1>
-              <div className="flex flex-wrap gap-3 pt-8 xl:gap-6">
-                <div className="flex items-center justify-center">
-                    <TechButton imgSrc="" buttonText="JavaScript" />
-                </div>
-                <div className="flex items-center justify-center">
-                    <TechButton imgSrc="" buttonText="HTML" />
-                </div>
-                <div className="flex items-center justify-center">
-                    <TechButton imgSrc="" buttonText="CSS" />
-                </div>
-                <div className="flex items-center justify-center">
-                    <TechButton imgSrc="" buttonText="React JS" />
-                </div>
-                <div className="flex items-center justify-center">
-                    <TechButton imgSrc="" buttonText="Tailwind CSS" />
-                </div>
-                <div className="flex items-center justify-center">
-                    <TechButton imgSrc="" buttonText="Docker" />
-                </div>
-              </div>
-            </div>
-          </div>
+          
       </main>
 
       <Footer />
