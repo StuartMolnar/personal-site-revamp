@@ -43,12 +43,17 @@ function RankedConverter() {
             </div>
 
             <h2 className="pt-6 text-body-lg">A web app to convert player ranks between Valorant and League of Legends by percentile</h2>
-            
-            <div className="pt-8 xl:pt-10">          
-              <EmblaCarousel slides={SLIDES} options={OPTIONS} images={IMAGES} />
+
+            <div className="pt-8 -mx-0 xl:pt-16">
+              <div className="border-t-[1.75px] border-black"></div>
             </div>
+
+            
+            {/* <div className="pt-8 xl:pt-10">          
+              <EmblaCarousel slides={SLIDES} options={OPTIONS} images={IMAGES} arrows={true} fillBackground={true}/>
+            </div> */}
   
-            <div className="flex flex-col-reverse xl:flex-row xl:gap-x-[10%] gap-y-10 pt-10 xl:pt-32">
+            <div className="flex flex-col-reverse xl:flex-row xl:gap-x-[10%] gap-y-10 pt-8 xl:pt-16">
               <div className="flex-row xl:w-[45%]">
                 <h1 className="text-title font-heavy">Motivation</h1>
                 <p className="pt-8 text-body-sm">As an avid League of Legends player, I would often find myself curious how my rank compares to friends who play Valorant, and vice versa. These games are both developed by Riot Games, but their ranked distributions are not exactly the same - for example, there was a time when Radiant (Valorant’s top rank) consisted of 0.3% of the playerbase, while Challenger (League of Legend’s top rank) consisted of only 0.02%.</p>
@@ -107,14 +112,29 @@ function RankedConverter() {
               </div>
             </div>
 
-            <div className="flex flex-col-reverse xl:flex-row xl:gap-x-[10%] gap-y-10 pt-10 xl:pt-32">
+            <div className="pt-8 -mx-0 xl:pt-16">
+              <div className="border-t-[1.75px] border-black"></div>
+            </div>
+
+            <div className="flex flex-col-reverse xl:flex-row xl:gap-x-[10%] gap-y-10 pt-8 xl:pt-16">
               <div className="hidden xl:block flex-row xl:w-[45%]">
-                (service architecture diagram)
+                
+                  <Lightbox
+                    imgSrc={'ranked-converter/architecture-diagram.png'}
+                    altText={'Architecture Diagram'}
+                    carousel={false}
+                    className="object-cover w-full rounded max-w-[850px]"
+                  />
               </div>
               <div className="flex-row xl:w-[45%]">
                 <h1 className="text-title font-heavy">Software Architecture</h1>
-                <div className="xl:hidden">
-                  (service architecture diagram)
+                <div className="flex justify-center pt-8 xl:hidden">
+                  <Lightbox
+                    imgSrc={'ranked-converter/architecture-diagram.png'}
+                    altText={'Architecture Diagram'}
+                    carousel={false}
+                    className="object-cover w-full rounded max-w-[500px]"
+                  />
                 </div>
                 <p className="pt-8 text-body-sm">Before diving into this app, I wanted to figure out which essential functions I would need. I was able to narrow it down into <span className="font-heavy">3 separate services</span>:</p>
                 
@@ -173,15 +193,12 @@ function RankedConverter() {
               <div className="flex-row xl:w-[45%]">
                 <h1 className="text-title font-heavy">Web Scraping Service</h1>
                 <div className="pt-6 xl:hidden">
+
                   
-                  <Lightbox
-                    imgSrc={'ranked-converter/code-scraper.png'}
-                    altText={'Web Scraping Photo'}
-                    carousel={false}
-                    className="object-cover w-full max-h-[400px] rounded"
-                  />
+                  <EmblaCarousel slides={[0,1,2,3,4]} options={OPTIONS} images={['ranked-converter/azure-portal.png', 'ranked-converter/azure-cli.png', 'ranked-converter/azure-commands.png', 'ranked-converter/code-scraper.png', 'ranked-converter/code-processor.png']} />
+                
                 </div>
-                <p className="pt-8 xl:w-2/3 text-body-sm">For my web-scraping, I created two services: <span className="font-bold">league_data</span> and <span className="font-bold">valorant_data</span>. Both of these use NodeJS and Puppeteer for web scraping and use Supabase’s NodeJS library to store the data they retrieve. They both function very similarly, too, with the following structure: </p>
+                <p className="pt-8 xl:w-2/3 text-body-sm">For my web-scraping, I created two services: <span className="font-heavy">league_data</span> and <span className="font-heavy">valorant_data</span>. Both of these use NodeJS and Puppeteer for web scraping and use Supabase’s NodeJS library to store the data they retrieve. They both function very similarly, too, with the following structure: </p>
                 <div className="max-w-lg pt-6 text-body-sm">
 
                   <ul className="space-y-2 list-none">
@@ -208,12 +225,8 @@ function RankedConverter() {
               </div>
               
               <div className="hidden pt-6 xl:block">
-                <Lightbox
-                  imgSrc={'ranked-converter/code-scraper.png'}
-                  altText={'Web Scraping Photo'}
-                  carousel={false}
-                  className="object-cover w-full max-h-[700px] rounded"
-                />
+                
+              <EmblaCarousel slides={[0,1,2,3,4]} options={OPTIONS} images={['ranked-converter/azure-portal.png', 'ranked-converter/azure-commands.png', 'ranked-converter/azure-cli.png', 'ranked-converter/code-scraper.png', 'ranked-converter/code-processor.png']} />
               </div>
             </div>
 
@@ -244,7 +257,7 @@ function RankedConverter() {
                   The database service is quite simple, as it’s managed by Supabase. I created the tables and their assorted data using Supabase’s web UI and connected to it using their NodeJS library.
                 </p>
             
-                <p className="pt-8 xl:w-2/3 text-body-sm">Talk more about the schema here maybe - talk about how i enabled row level security and read-only access for my frontend</p>
+                <p className="pt-8 xl:w-2/3 text-body-sm">For simplicity's sake, and because the data I'm storing is all publicly available anyway, I enabled read-only access to the database. This made it possible for my frontend to query the database using a public key, rather than needing to run on its own server to obscure a secret key environment variable.</p>
               </div>
             
             </div>
@@ -254,30 +267,26 @@ function RankedConverter() {
               <div className="flex-row xl:w-[45%]">
                 <h1 className="text-title font-heavy">Frontend UI</h1>
                 <div className="pt-6 xl:hidden">
-                  <Lightbox
-                    imgSrc={'ranked-converter/index-page.png'}
-                    altText={'Index Page Photo'}
-                    carousel={false}
-                    className="object-cover w-full max-h-[400px] rounded"
-                  />
+                  
+                  <EmblaCarousel slides={[0,1,2]} options={OPTIONS} images={['ranked-converter/index-page.png', 'ranked-converter/index-selection.png', 'ranked-converter/index-completed.png']} />
                 </div>
                 <p className="pt-8 xl:w-2/3 text-body-sm">The frontend for my app was created using NextJS and MaterialUI. The purpose of my app was to be a very simple tool.. It features a single index page with a dropdown menu and toggle window between games. MaterialUI was great as it comes with a lot of components to choose from. NextJS was mainly chosen due to familiarity and free hosting on Vercel.</p>
               </div>
               
               
               <div className="xl:w-[45%] hidden xl:block">
-                <Lightbox
-                  imgSrc={'ranked-converter/index-page.png'}
-                  altText={'Index Page Photo'}
-                  carousel={false}
-                  className="object-cover w-full max-h-[400px] rounded"
-                />
+               
+                <EmblaCarousel slides={[0,1,2]} options={OPTIONS} images={['ranked-converter/index-page.png', 'ranked-converter/index-selection.png', 'ranked-converter/index-completed.png']} />
               </div>
+              </div>
+
+            <div className="pt-8 -mx-0 xl:pt-16">
+              <div className="border-t-[1.75px] border-black"></div>
             </div>
 
-            <div className="flex flex-col items-center justify-center pt-10 xl:pt-32 ">
+            <div className="flex flex-col pt-8 xl:pt-16 ">
               
-              <h1 className="text-center text-title font-heavy">Takeaways</h1>
+              <h1 className="text-title font-heavy">Takeaways</h1>
 
               <p className="pt-6 xl:w-1/2 text-body-sm">This project gave me opportunities to dive deeper into web-scraping, containerization, and Azure services. It also served as an interesting opportunity to research tools based on cost benefits, and I was ultimately successful in hosting this project free of personal charge.</p>
               <p className="pt-6 xl:w-1/2 text-body-sm">The technology I’m most proud of learning from this project, though, is definitely Azure’s Container Apps. It was a little confusing at the start, and a lot of their official documentation wasn’t working properly for me, so it required some extra research. In the end, it helped me save a lot on hosting costs versus hosting a permanent server.</p>
