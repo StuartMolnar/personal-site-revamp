@@ -65,21 +65,21 @@ export default function Home() {
         {/* adjust grid-cols-# for different screen sizes if necessary */}
         <div id="projects" className="grid grid-cols-1 pt-20 space-y-4 lg:gap-4 lg:grid-cols-2 lg:space-y-0">
           <Project 
-            onClick={() => handleProjectClickMobile('western-star')}
-            isActive={activeProjectMobile === 'western-star'} 
-            bgColor="bg-gray" imgSrc="western-star-image.png" title="Western Star Resources" description="Front-End Development" href="western-star"/>
-          <Project 
             onClick={() => handleProjectClickMobile('ranked-converter')}
             isActive={activeProjectMobile === 'ranked-converter'} 
             bgColor="bg-black" imgSrc="leaguexvalorant-logo.png" title="League to Valorant Rank Converter" description="Full-Stack Development" href="ranked-converter" width_padding="p-10 lg:p-32"/>
           <Project 
-            onClick={() => handleProjectClickMobile('chat-bot')}
-            isActive={activeProjectMobile === 'chat-bot'} 
-            bgColor="bg-black" imgSrc="league-logo.png" title="League of Legends Chat Assistant" description="Back-End Development" href="chat-bot" width_padding="p-12 lg:p-36"/>
+            onClick={() => handleProjectClickMobile('western-star')}
+            isActive={activeProjectMobile === 'western-star'} 
+            bgColor="bg-gray" imgSrc="western-star-image.png" title="Western Star Resources" description="Front-End Development" href="western-star"/>
           <Project 
             onClick={() => handleProjectClickMobile('rio-minerals')}
             isActive={activeProjectMobile === 'rio-minerals'} 
-            bgColor="bg-gray" imgSrc="rio-image.png" title="Rio Minerals Ltd." description="Front-End Development" href="western-star" width_padding="p-4"/>
+            bgColor="bg-gray" imgSrc="rio-image.png" title="Rio Minerals Ltd." description="Front-End Development" href="rio-minerals" width_padding="p-4"/>
+          <Project 
+              onClick={() => handleProjectClickMobile('chat-bot')}
+              isActive={activeProjectMobile === 'chat-bot'} 
+              bgColor="bg-black" imgSrc="league-logo.png" title="League of Legends Chat Assistant" description="Back-End Development" href="chat-bot" width_padding="p-12 lg:p-36"/>
         </div>
         
       </main>
