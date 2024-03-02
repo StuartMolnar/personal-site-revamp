@@ -11,7 +11,7 @@ function ChatBot() {
           <div className="flex flex-col gap-y-6">
             <h1 className="font-heavy text-title md:text-hero">Page Under Construction</h1>
 
-            <p className="">This page will feature a <a href="https://riominerals.com/" className="font-heavy text-red hover:text-black">League of Legends NLP Chat Bot</a> project, utilizing popular tools like <span className="font-heavy text-red">OpenAI's GPT</span> models, a vector database named <span className="font-heavy text-red">Pinecone</span>, and <span className="font-heavy text-red">web-scraping methods</span> - all containerized within a <span className="font-heavy text-red">microservice architecture</span>.</p>
+            <p className="">This page will feature a <a href="https://riominerals.com/" className="font-heavy text-red hover:text-black">League of Legends NLP Chat Bot</a> project, utilizing popular tools like <span className="font-heavy text-red">OpenAI&apos;s GPT</span> models, a vector database named <span className="font-heavy text-red">Pinecone</span>, and <span className="font-heavy text-red">web-scraping methods</span> - all containerized within a <span className="font-heavy text-red">microservice architecture</span>.</p>
             <p className="">Feel free the view the <span className="font-heavy text-red">source code</span> below!</p>
 
             <div className="flex gap-x-2 md:gap-x-4">

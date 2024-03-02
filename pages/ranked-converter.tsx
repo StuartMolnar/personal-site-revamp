@@ -56,7 +56,7 @@ function RankedConverter() {
             <div className="flex flex-col-reverse xl:flex-row xl:gap-x-[10%] gap-y-10 pt-8 xl:pt-16">
               <div className="flex-row xl:w-[45%]">
                 <h1 className="text-title font-heavy">Motivation</h1>
-                <p className="pt-8 text-body-sm">As an avid League of Legends player, I would often find myself curious how my rank compares to friends who play Valorant, and vice versa. These games are both developed by Riot Games, but their ranked distributions are not exactly the same - for example, there was a time when Radiant (Valorant’s top rank) consisted of 0.3% of the playerbase, while Challenger (League of Legend’s top rank) consisted of only 0.02%.</p>
+                <p className="pt-8 text-body-sm">As an avid League of Legends player, I would often find myself curious how my rank compares to friends who play Valorant, and vice versa. These games are both developed by Riot Games, but their ranked distributions are not exactly the same - for example, there was a time when Radiant (Valorant&apos;s top rank) consisted of 0.3% of the playerbase, while Challenger (League of Legend&apos;s top rank) consisted of only 0.02%.</p>
               </div>
               <div className="flex-row xl:w-[45%]"> 
                 <h1 className="text-title font-heavy">Technologies</h1>
@@ -107,7 +107,7 @@ function RankedConverter() {
               </div>
               <div className="flex-row xl:w-[45%]">
                 <h1 className="text-title font-heavy">Solution</h1>
-                <p className="pt-8 xl:w-2/3 text-body-sm">I saw that a lot of this information did exist online, even if it wasn’t directly provided by Riot’s API. It provided me an opportunity to build something to make the whole process easier.</p>
+                <p className="pt-8 xl:w-2/3 text-body-sm">I saw that a lot of this information did exist online, even if it wasn&apos;t directly provided by Riot&apos;s API. It provided me an opportunity to build something to make the whole process easier.</p>
 
               </div>
             </div>
@@ -167,7 +167,7 @@ function RankedConverter() {
                     <li className="p-4 border border-gray-200 rounded shadow-sm">
                       <h4 className="font-semibold">1. Azure Container Apps</h4>
                       <ul className="pl-4 mt-2 list-inside">
-                        <li>- for quick, scheduled processes like my web scraping service - with all costs covered by Azure’s free credits</li>
+                        <li>- for quick, scheduled processes like my web scraping service - with all costs covered by Azure&apos;s free credits</li>
                       </ul>
                     </li>
                     <li className="p-4 border border-gray-200 rounded shadow-sm">
@@ -198,7 +198,7 @@ function RankedConverter() {
                   <EmblaCarousel slides={[0,1,2,3,4]} options={OPTIONS} images={['ranked-converter/azure-portal.png', 'ranked-converter/azure-cli.png', 'ranked-converter/azure-commands.png', 'ranked-converter/code-scraper.png', 'ranked-converter/code-processor.png']} />
                 
                 </div>
-                <p className="pt-8 xl:w-2/3 text-body-sm">For my web-scraping, I created two services: <span className="font-heavy">league_data</span> and <span className="font-heavy">valorant_data</span>. Both of these use NodeJS and Puppeteer for web scraping and use Supabase’s NodeJS library to store the data they retrieve. They both function very similarly, too, with the following structure: </p>
+                <p className="pt-8 xl:w-2/3 text-body-sm">For my web-scraping, I created two services: <span className="font-heavy">league_data</span> and <span className="font-heavy">valorant_data</span>. Both of these use NodeJS and Puppeteer for web scraping and use Supabase&apos;s NodeJS library to store the data they retrieve. They both function very similarly, too, with the following structure: </p>
                 <div className="max-w-lg pt-6 text-body-sm">
 
                   <ul className="space-y-2 list-none">
@@ -254,10 +254,10 @@ function RankedConverter() {
                   />
                 </div>
                 <p className="pt-8 xl:w-2/3 text-body-sm">
-                  The database service is quite simple, as it’s managed by Supabase. I created the tables and their assorted data using Supabase’s web UI and connected to it using their NodeJS library.
+                  The database service is quite simple, as it&apos;s managed by Supabase. I created the tables and their assorted data using Supabase&apos;s web UI and connected to it using their NodeJS library.
                 </p>
             
-                <p className="pt-8 xl:w-2/3 text-body-sm">For simplicity's sake, and because the data I'm storing is all publicly available anyway, I enabled read-only access to the database. This made it possible for my frontend to query the database using a public key, rather than needing to run on its own server to obscure a secret key environment variable.</p>
+                <p className="pt-8 xl:w-2/3 text-body-sm">For simplicity&apos;s sake, and because the data I&apos;m storing is all publicly available anyway, I enabled read-only access to the database. This made it possible for my frontend to query the database using a public key, rather than needing to run on its own server to obscure a secret key environment variable.</p>
               </div>
             
             </div>
@@ -289,7 +289,7 @@ function RankedConverter() {
               <h1 className="text-title font-heavy">Takeaways</h1>
 
               <p className="pt-6 xl:w-1/2 text-body-sm">This project gave me opportunities to dive deeper into web-scraping, containerization, and Azure services. It also served as an interesting opportunity to research tools based on cost benefits, and I was ultimately successful in hosting this project free of personal charge.</p>
-              <p className="pt-6 xl:w-1/2 text-body-sm">The technology I’m most proud of learning from this project, though, is definitely Azure’s Container Apps. It was a little confusing at the start, and a lot of their official documentation wasn’t working properly for me, so it required some extra research. In the end, it helped me save a lot on hosting costs versus hosting a permanent server.</p>
+              <p className="pt-6 xl:w-1/2 text-body-sm">The technology I&apos;m most proud of learning from this project, though, is definitely Azure&apos;s Container Apps. It was a little confusing at the start, and a lot of their official documentation wasn&apos;t working properly for me, so it required some extra research. In the end, it helped me save a lot on hosting costs versus hosting a permanent server.</p>
               <p className="pt-6 xl:w-1/2 text-body-sm">Ultimately, this project allowed me to gain experience combining technologies I previously learned - such as web-scraping and containerization - and also research new technologies like Supabase and Azure Container Apps.</p>
 
             </div>

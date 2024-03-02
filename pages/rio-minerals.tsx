@@ -11,7 +11,7 @@ function RioMinerals() {
           <div className="flex flex-col gap-y-6">
             <h1 className="font-heavy text-title md:text-hero">Page Under Construction</h1>
 
-            <p className="">This page will feature <a href="https://riominerals.com/" className="font-heavy text-red hover:text-black">riominerals.com</a>, a full-scale rebrand of the established mining company's website.</p>
+            <p className="">This page will feature <a href="https://riominerals.com/" className="font-heavy text-red hover:text-black">riominerals.com</a>, a full-scale rebrand of the established mining company&apos;s website.</p>
             <p className="">Feel free the view the <span className="font-heavy text-red">live site</span> or the <span className="font-heavy text-red">source code</span> below!</p>
 
             <div className="flex gap-x-2 md:gap-x-4">
