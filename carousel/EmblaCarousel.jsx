@@ -9,7 +9,7 @@ import {
 import Lightbox from '@/components/Lightbox';
 
 const EmblaCarousel = (props) => {
-  const { slides, options, images } = props
+  const { slides, options, images, arrows, fillBackground } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -24,7 +24,7 @@ const EmblaCarousel = (props) => {
 
   return (
     <div className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
+      <div className={`embla__viewport ${fillBackground ? 'bg-gray' : ''}`} ref={emblaRef}>
         <div className="embla__container">
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
@@ -38,7 +38,7 @@ const EmblaCarousel = (props) => {
         </div>
       </div>
 
-      <div className="hidden embla__buttons xl:flex">
+      <div className={`hidden embla__buttons ${arrows ? 'xl:flex' : ''}`}>
         <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
         <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
       </div>
