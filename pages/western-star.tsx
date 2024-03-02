@@ -25,7 +25,7 @@ function WesternStar() {
         <main className="flex flex-col items-center justify-center max-w-[1250px] mx-auto min-h-[80vh] px-6 pt-8 pb-10 font-normal md:px-12 xl:pt-16 xl:px-32">
 
           <div className="flex flex-col gap-y-6">
-            <h1 className="font-heavy text-title md:text-hero">Page Under Construction</h1>
+            <h1 className="font-heavy text-title md:text-hero">Come back later for more!</h1>
 
             <p className="">This page will feature <a href="https://westernstarresources.com/" className="font-heavy text-red hover:text-black">westernstarresources.com</a>, a brand new investor-focused website to kick-off the launch of Western Star Resources as a junior mining company.</p>
             <p className="">Feel free the view the <span className="font-heavy text-red">live site</span> or the <span className="font-heavy text-red">source code</span> below!</p>
